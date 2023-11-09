@@ -4,10 +4,10 @@ from collections import Counter
 
 sample_text = "This this is a a a a sample text text text text text to to explain the part of speech tagging!"
 
-chunks = word_tokenize(sample_text)
+word = word_tokenize(sample_text)
 
 #Let's grammatically classify the sample text using pos_tag
-tagged = nltk.pos_tag(chunks)
+tagged = nltk.pos_tag(word)
 print("Words with tags attached:")
 print(tagged)
 
@@ -16,6 +16,7 @@ print("Tag Counts:")
 counter = Counter(t for word, t in tagged)
 print(counter)
 
-#Let's plot the frequency distribution of words in the sample text
-fd = nltk.FreqDist(chunks)
+#Let's plot the frequency distribution of words in the sample text. You need Matplotlib installed to use this feature.
+fd = nltk.FreqDist(word)
 fd.plot()
+
