@@ -11,7 +11,7 @@ tagged = nltk.pos_tag(word)
 print("Words with tags attached:")
 print(tagged)
 
-#Let's do Chinking to remove certain types of words like prepositions and conjunctions from the chunks. 
+#Let's do Chinking to remove certain types of words like prepositions and conjunctions from the Noun Phrases chunks. 
 chinkPattern = r"""Chunk:{<.*>+}                
     }<IN|CC>+{ """
 chinkParser = nltk.RegexpParser(chinkPattern)
