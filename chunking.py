@@ -10,7 +10,7 @@ tagged = nltk.pos_tag(word)
 print("Words with tags attached:")
 print(tagged)
 
-#Let's grammatically group the words/phrases otherwise called as 'chunking'. Grouping all Noun Phrases.
+#Let's grammatically group the words or phrases otherwise called as 'chunking'. Grouping all Noun Phrases.
 chunkPattern = r"""chunk:{<DT>?<JJ>*<NN.*>+}""" 
 chunkParser = nltk.RegexpParser(chunkPattern)
 chunked = chunkParser.parse(tagged)
