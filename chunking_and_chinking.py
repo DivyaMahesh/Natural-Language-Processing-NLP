@@ -14,5 +14,12 @@ print(tagged)
 chunkPattern = r"""chunk:{<DT>?<JJ>*<NN.*>+}""" 
 chunkParser = nltk.RegexpParser(chunkPattern)
 chunked = chunkParser.parse(tagged)
-chunked.draw()
 
+#Let's do Chinking to remove certain types of words like prepositions and conjunctions from the chunks. 
+chinkPattern = r"""Chunk:{<.*>+}                
+    }<IN|CC>+{ """
+chinkParser = nltk.RegexpParser(chinkPattern)
+chinked = chinkParser.parse(chunked) #Feeding the chunks as an input to get chinked output
+
+chunked.draw()
+chinked.draw()
